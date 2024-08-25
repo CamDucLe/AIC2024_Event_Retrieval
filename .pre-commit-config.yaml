@@ -1,0 +1,40 @@
+default_language_version:
+  python: python3.11
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-yaml
+      - id: check-json
+      - id: check-xml
+      # - id: detect-aws-credentials
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: pretty-format-json
+        args: [--autofix]
+      - id: check-merge-conflict
+      - id: no-commit-to-branch
+        args: [--branch, main]
+      # - id: name-tests-test
+      #   files: ^backend/tests/
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: ''
+    hooks:
+      - id: mypy
+        args: [--no-strict-optional, --ignore-missing-imports]
+
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: ''
+    hooks:
+      - id: isort
+        args: ["--profile", "black",]
+
+  - repo: https://github.com/psf/black
+    rev: 24.4.2
+    hooks:
+      - id: black
+        args: [--line-length, '100']
