@@ -1,5 +1,5 @@
 # Use an official Python runtime as a base image
-FROM python:3.11-bookworm
+FROM python:3.10-bookworm
 
 # Set timeout to 60 minutes before installing dependencies
 RUN pip install --default-timeout=3600 future

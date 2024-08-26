@@ -1,5 +1,5 @@
 default_language_version:
-  python: python3.11
+  python: python3.10
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -10,7 +10,7 @@ repos:
       - id: check-yaml
       - id: check-json
       - id: check-xml
-      # - id: detect-aws-credentials
+      - id: detect-aws-credentials
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: pretty-format-json
@@ -18,8 +18,8 @@ repos:
       - id: check-merge-conflict
       - id: no-commit-to-branch
         args: [--branch, main]
-      # - id: name-tests-test
-      #   files: ^backend/tests/
+      - id: name-tests-test
+        files: ^tests/
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: ''
